@@ -7,11 +7,9 @@ export default class AuthController {
   try {
       const data = request.only(["email","password"]);
       const user = await User.create(data);
-
-      return user;
-      
+      return user;    
   } catch (error) {
-      response.status(500).send("Erro ao cadastrar o usuário")
+      response.status(500).send("Erro ao cadastrar o usuário");
   }
   }
 
@@ -27,3 +25,4 @@ export default class AuthController {
 
   }
 }
+///////tete///
