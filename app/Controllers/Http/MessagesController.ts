@@ -3,12 +3,12 @@ import Message from 'App/Models/Message'
 
 export default class MessagesController {
   public async index({}: HttpContextContract) {
-    const message = await Message.query().preload('user');
+    const message = await Message.query().preload('User');
     return message;
   }
 
   public async store({ request , auth }: HttpContextContract) {
-    const data = request.only(["texto" ]);
+    const data = request.only(["texto"]);
     const message = await Message.create({...data, userId: auth.user?.id});
   //  const message = await Message.create(data);
     return message;

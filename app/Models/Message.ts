@@ -1,6 +1,5 @@
 import { DateTime } from 'luxon'
 import { BaseModel, BelongsTo, belongsTo, column } from '@ioc:Adonis/Lucid/Orm'
-/*import user from './User'*/
 import User from './User'
 
 export default class Message extends BaseModel {
@@ -20,5 +19,5 @@ export default class Message extends BaseModel {
   public userId:number;
 
   @belongsTo(() => User)
-  public user: BelongsTo<typeof User>
+  public User: BelongsTo<typeof User>
 }
