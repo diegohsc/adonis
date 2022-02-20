@@ -26,7 +26,7 @@ Route.get('/', async () => {
 
 
 Route.post("/register","AuthController.register");
-Route.post("/Authenticate" , "AuthController.authenticate");
+Route.post("/authenticate" , "AuthController.authenticate");
 
 Route.group(()=> {
   Route.resource("Messages","MessagesController").apiOnly()

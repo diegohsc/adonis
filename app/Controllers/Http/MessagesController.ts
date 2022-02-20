@@ -7,9 +7,10 @@ export default class MessagesController {
     return message;
   }
 
-  public async store({ request , auth}: HttpContextContract) {
-    const data = request.only(["texto"]);
+  public async store({ request , auth }: HttpContextContract) {
+    const data = request.only(["texto" ]);
     const message = await Message.create({...data, userId: auth.user?.id});
+  //  const message = await Message.create(data);
     return message;
   }
 
